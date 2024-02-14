@@ -13,6 +13,11 @@ public class CreekRiverDbContext : DbContext
         new CampsiteType {Id = 3, CampsiteTypeName = "Primitive", FeePerNight = 10.00M, MaxReservationDays = 3},
         new CampsiteType {Id = 4, CampsiteTypeName = "Hammock", FeePerNight = 12M, MaxReservationDays = 7}
         });
+
+        modelBuilder.Entity<Campsite>().HasData(new Campsite[]
+        {
+        new Campsite {Id = 1, CampsiteTypeId = 1, Nickname = "Barred Owl", ImageUrl="https://tnstateparks.com/assets/images/content-images/campgrounds/249/colsp-area2-site73.jpg"},
+        });
     }
 
     public DbSet<Reservation> Reservations { get; set; }
